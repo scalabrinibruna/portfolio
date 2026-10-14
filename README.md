@@ -1,116 +1,111 @@
-# 💜 Portfólio Profissional – Bruna Scalabrini
+# Portfólio - Bruna Scalabrini
 
-> Portfólio pessoal de uma estudante de Engenharia de Software da PUC Minas: sobre mim (PT/EN), linha do tempo de projetos, experiências e contato com envio real de e-mail.
-> Projeto do **Laboratório 01 – DIAW** (Prof. João Paulo Carneiro Aramuni).
+Meu portfólio pessoal, feito para o Laboratório 01 de DIAW. Ele tem uma parte sobre mim em português e inglês, uma linha do tempo com meus projetos, minhas experiências e um formulário de contato que manda e-mail de verdade.
 
-## 🚧 Status do Projeto
+🌐 **Site:** https://portfolio-phi-wine-aqetk97dkd.vercel.app/
+📦 **Repositório:** https://github.com/scalabrinibruna/portfolio
+🎨 **Figma:** https://www.figma.com/design/8vgfzSYJEbT3jdQDp3eGq2/portfolio-wireframe?node-id=0-1&t=ZfSS4YHKJVKHFFIt-1
 
-- [x] Sprint 01 – Planejamento, layout e navegação
-- [x] Sprint 02 – Funcionalidades principais (código pronto)
-- [ ] Sprint 03 – Deploy, imagens/GIFs reais, README final
+## Como ficou
 
-## 🔗 Links Úteis
+| | | |
+| --- | --- | --- |
+| ![print 1](docs/print1.png) | ![print 2](docs/print2.png) | ![print 3](docs/print3.png) |
 
-- 🌐 **Site publicado:** [LINK DO SITE APÓS O DEPLOY]
-- 📦 **Repositório:** [LINK DO REPOSITÓRIO GITHUB]
-- 🎨 **Wireframes (Figma):** [LINK DO FIGMA]
+**Wireframes (desktop e mobile):**
 
-## 📝 Sobre o Projeto
-
-Site pessoal para apresentar trajetória, tecnologias, projetos e formas de contato de maneira moderna e acessível.
-Todo o conteúdo vem de **um único arquivo**, `src/data/profile.js`. Campos `null` não aparecem como texto no site: viram estados vazios discretos.
-
-## ✨ Funcionalidades Principais
-
-- 🌐 Sobre mim em português e inglês (alternância PT/EN)
-- 🕒 Linha do tempo de projetos ordenada do mais antigo ao mais recente (campo `start`, formato `AAAA-MM`; sem data vai ao fim)
-- 💼 Experiências com instituição, atividade, período e descrição
-- 📨 Formulário com validação e envio real via EmailJS (sem simular sucesso se não estiver configurado)
-- 📱 Responsivo, menu mobile, foco visível, navegação por teclado, `prefers-reduced-motion`, tema claro/escuro automático
-
-## 🛠 Tecnologias Utilizadas
-
-| Camada | Tecnologia |
+| Desktop | Mobile |
 | --- | --- |
-| Interface | React 18, JavaScript (ES6+) |
-| Build | Vite 5 |
-| Estilização | CSS puro (variáveis, grid/flex), ícones SVG inline |
-| E-mail | `@emailjs/browser` |
-| Versionamento / Hospedagem | Git, GitHub, Vercel (plano gratuito) |
+| ![wireframe desktop](docs/print4.png) | ![wireframe mobile](docs/print5.png) |
 
-**Dependências:** `react`, `react-dom`, `@emailjs/browser` · **Dev:** `vite`, `@vitejs/plugin-react`.
 
-## 🏗 Arquitetura
+## O que tem no site
 
-SPA estática, **sem back-end próprio**: o EmailJS envia o e-mail direto do navegador e usa só chaves públicas (a chave privada do EmailJS nunca entra no projeto). Isso reduz custo, manutenção e superfície de ataque, e atende o requisito de envio por e-mail. Limitação: para reforçar a proteção contra spam, ative as restrições de domínio no painel do EmailJS.
+- **Sobre mim** em português e inglês, com um botão PT/EN para trocar
+- **Projetos** em linha do tempo, do mais antigo para o mais recente, cada um com descrição, tecnologias, imagem, link do repositório e link do site no ar
+- **Experiências** com instituição, atividade, período e descrição
+- **Contato** com ícones (e-mail, WhatsApp, LinkedIn e GitHub) e um formulário com validação que envia o e-mail pelo EmailJS
+- Menu que funciona no celular, tema claro/escuro automático e navegação pelo teclado
 
-Identidade visual: roxo (`#8b5cf6`) e azul (`#3b82f6`), fonte do sistema (carrega rápido e não depende de serviço externo).
+## Tecnologias
 
-## 🔧 Instalação e Execução
+- React 18
+- Vite 5
+- CSS puro
+- EmailJS (`@emailjs/browser`)
+- Git e GitHub
+- Vercel para hospedar
+- Figma para os wireframes
 
-**Pré-requisitos:** Node.js 18+ e npm.
+**Dependências:** `react`, `react-dom`, `@emailjs/browser`. Para desenvolvimento: `vite` e `@vitejs/plugin-react`.
+
+## Por que não tem back-end
+
+O site só mostra conteúdo e manda e-mail, então não precisei de servidor. O EmailJS envia a mensagem direto do navegador, usando só chaves públicas, e nenhuma chave secreta fica no código.
+
+## Como rodar na sua máquina
+
+Precisa do Node.js 18 ou mais novo.
 
 ```bash
-git clone [LINK DO REPOSITÓRIO GITHUB]
+git clone https://github.com/scalabrinibruna/portfolio.git
 cd portfolio
 npm install
-cp .env.example .env.local   # preencha as 3 variáveis
-npm run dev                  # http://localhost:5173
+npm run dev
 ```
 
-### 🔑 Variáveis de ambiente
+Depois é só abrir http://localhost:5173.
 
-| Variável | Onde obter |
-| --- | --- |
-| `VITE_EMAILJS_SERVICE_ID` | EmailJS → Email Services |
-| `VITE_EMAILJS_TEMPLATE_ID` | EmailJS → Email Templates |
-| `VITE_EMAILJS_PUBLIC_KEY` | EmailJS → Account → API Keys |
+### Configurar o formulário
 
-No template do EmailJS use as variáveis `{{from_name}}`, `{{reply_to}}` e `{{message}}`. Sem essas variáveis, o formulário valida os campos e informa que o envio não está configurado.
+O formulário só envia e-mail se você configurar o EmailJS. Sem isso, ele valida os campos e avisa que o envio não está configurado.
 
-## 🚀 Deploy (Vercel)
-
-1. Crie o repositório no GitHub e envie o código (`git init`, `git add .`, `git commit`, `git push`).
-2. Em vercel.com, **Add New → Project** e importe o repositório.
-3. Framework: Vite · Install: `npm install` · Build: `npm run build` · Output: `dist`.
-4. Em **Settings → Environment Variables**, cadastre as 3 variáveis `VITE_EMAILJS_*` e faça **Redeploy**.
-5. Abra a URL, teste menu, troca PT/EN, responsividade e envie uma mensagem real.
-6. Cole a URL no topo deste README.
-
-## 📂 Estrutura de Pastas
+1. Crie uma conta em https://www.emailjs.com/
+2. Em **Email Services**, conecte o Gmail (marque todas as permissões que o Google mostrar, senão dá erro 412)
+3. Em **Email Templates**, crie um template com `{{from_name}}`, `{{reply_to}}` e `{{message}}` no conteúdo e `{{reply_to}}` no campo Reply To
+4. Copie `.env.example` para `.env.local` e preencha, sem espaço depois do `=`:
 
 ```
-.
-├── index.html            # título, descrição (SEO) e favicon
-├── public/favicon.svg
-├── .env.example          # modelo das variáveis (sem segredos)
+VITE_EMAILJS_SERVICE_ID=
+VITE_EMAILJS_TEMPLATE_ID=
+VITE_EMAILJS_PUBLIC_KEY=
+```
+
+Se mudar o `.env.local`, reinicie o `npm run dev`. Esse arquivo não vai pro GitHub.
+
+## Mudando o conteúdo
+
+Tudo está em `src/data/profile.js`: meus dados, projetos e experiências. Para adicionar um projeto é só copiar um item da lista `projects` e trocar os campos. As imagens ficam em `public/projetos/`.
+
+## Deploy
+
+Publiquei na Vercel:
+
+1. Subi o código pro GitHub
+2. Na Vercel: Add New, Project, e importei o repositório
+3. Build: `npm run build` / Output: `dist`
+4. Cadastrei as 3 variáveis `VITE_EMAILJS_*` em Environment Variables
+5. Deploy
+
+Cada `git push` na `main` atualiza o site sozinho.
+
+## Estrutura
+
+```
+portfolio/
+├── docs/              # prints e wireframes
+├── public/            # favicon e imagens dos projetos
 ├── src/
-│   ├── data/profile.js   # TODOS os dados pessoais, projetos e experiências
-│   ├── App.jsx           # Header, Sobre, Projetos, Experiências, Contato
+│   ├── data/profile.js
+│   ├── App.jsx
 │   ├── styles.css
 │   └── main.jsx
-├── docs/wireframes.md    # especificação para o Figma
-└── package.json
+├── .env.example
+├── index.html
+├── package.json
+└── vite.config.js
 ```
 
-## 🎥 Demonstração
+## Testes
 
-[IMAGENS DOS WIREFRAMES E PRINTS DO SITE: adicionar em `docs/` e referenciar aqui]
-
-## 🧪 Testes
-
-Não há testes automatizados. Verificação feita: `npm run build` sem erros. Verificação manual pendente: formulário real, responsividade em dispositivos e site publicado.
-
-## 👥 Autora
-
-| Nome | GitHub | E-mail |
-| --- | --- | --- |
-| Bruna Batista Scalabrini | [scalabrinibruna](https://github.com/scalabrinibruna) | scalabrinibruna0@gmail.com |
-
-## 🙏 Agradecimentos
-
-Engenharia de Software PUC Minas e Prof. Dr. João Paulo Aramuni.
-
-## 📄 Licença
-
-MIT.
+Não fiz testes automatizados. O que conferi foi que o `npm run build` roda sem erro, que o formulário envia e-mail de verdade rodando local, e que o site está no ar na Vercel.
