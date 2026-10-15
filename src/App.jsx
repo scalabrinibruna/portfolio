@@ -136,7 +136,7 @@ function validate(v) {
 function Contact() {
   const [v, setV] = useState({ name: '', email: '', message: '' })
   const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState('idle') // idle | sending | success | error | unconfigured
+  const [status, setStatus] = useState('idle') 
   const set = (k) => (ev) => setV({ ...v, [k]: ev.target.value })
 
   async function submit(ev) {

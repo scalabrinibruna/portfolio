@@ -16,7 +16,7 @@ export const profile = {
     pt: 'Desenvolvimento web, programação, análise de dados e boas práticas de engenharia de software.',
     en: 'Web development, programming, data analysis, and software engineering best practices.',
   },
-  avatar: null,                       // TODO: ex. '/avatar.jpg' (arquivo em /public)
+  avatar: null,                     
 }
 
 export const contacts = {
