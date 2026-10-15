@@ -24,7 +24,6 @@ Meu portfólio pessoal, feito para o Laboratório 01 de DIAW (Engenharia de Soft
 - [Testes](#-testes)
 - [Documentações utilizadas](#-documentações-utilizadas)
 - [Autora](#-autora)
-- [Contribuição](#-contribuição)
 - [Agradecimentos](#-agradecimentos)
 - [Licença](#-licença)
 
